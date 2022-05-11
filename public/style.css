@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700;800;900&family=Righteous&display=swap');
+*{
+  box-sizing: border-box;
+}
+.app{
+  width: 100vw;
+  height: 100vh;
+  background-color: #FB6B6B;
+}
+.telaInicial{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+h1{
+  font: normal 400 36px 'Righteous', cursive;
+  color: #FFFFFF;
+}
+.botaoIniciar{
+  background-color: #FFFFFF;
+  width: 65.6vw;
+  height: 8.09vh;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: normal 400 18px 'Recursive', sans-serif;
+  color: #D70900;
+  border-radius: 5px;
+  border: 1px solid #D70900;
+  box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
+}
+.topo{
+  width: 68.16vw;
+  display: flex;
+  gap: 20px;
+  margin-top: 42px;
+  margin-bottom: 51px;
+}
+.tela2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pergunta{
+  background-color: #FFFFFF;
+  width: 80vw;
+  height: 9.74vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4vw;
+  font: normal 700 16px 'Recursive', sans-serif;
+  color: #333333;
+  border-radius: 5px;
+  box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
+}
+.card{
+  background-color: #FFFFD5;
+  width: 79.73vw;
+  height: 19.64vh;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
+}
+.texto{
+  font: normal 400 18px 'Recursive', sans-serif;
+  margin-top: 2.70vh;
+}
+.card img{
+  position: absolute;
+  bottom: 0.9vh;
+  right: 4vw;
+}
+.face{
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 0 4vw;
+}
+.backFace {
+  transform: rotateY(180deg);
+}
+.virar{
+  transform: rotateY(180deg);
+  transition: all .5s;
+  transform-style: preserve-3d;
+}
+.opcoes{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  padding: 0 4vw;
+  margin-bottom: 0.9vh;
+}
+.opcoes > div{
+  width: 22.712vw;
+  height: 5.57vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5vw;
+  bottom: 0;
+  border-radius: 5px;
+}
+.opcoes div:nth-child(1){
+  background-color: #FF3030;
+}
+.opcoes div:nth-child(2){
+  background-color: #FF922E;
+}
+.opcoes div:nth-child(3){
+  background-color: #2FBE34;
+}
+.concluidos{
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10.49vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: normal 400 18px 'Recursive', sans-serif;
+  color: #333333;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.escondido{
+  display: none;
+}
