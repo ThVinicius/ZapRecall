@@ -1,12 +1,12 @@
 import React from 'react'
-import TelaInicial from './TelaInicial'
-import Tela2 from './Tela2'
+import Initial from './Initial'
+import Contents from './Contents'
 
 export default function App() {
   const [iniciar, setIniciar] = React.useState(false)
   return (
     <div className="app">
-      {iniciar ? <Tela2 /> : <TelaInicial setIniciar={setIniciar} />}
+      {iniciar ? <Contents /> : <Initial setIniciar={setIniciar} />}
     </div>
   )
 }
