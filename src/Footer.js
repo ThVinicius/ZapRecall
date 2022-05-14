@@ -1,18 +1,30 @@
-export default function Footer({ card, armazem, setAdd, setIniciar }) {
+export default function Footer({
+  card,
+  storage,
+  setAdd,
+  setStart,
+  zapGoal,
+  setZapGoal,
+  setDeck
+}) {
   let score = 0
-  armazem.forEach(function (item) {
-    if (item.score === 'disapproved') score++
-  })
+  storage.forEach(item => (item.score === 'zap' ? score++ : undefined))
+
+  function restart() {
+    setStart(false)
+    setDeck('defauld')
+    setZapGoal('')
+  }
 
   switch (true) {
-    case armazem.length < card.length:
+    case storage.length < card.length:
       return (
         <footer>
           <h3>
-            {armazem.length}/{card.length} CONCLUÍDOS
+            {storage.length}/{card.length} CONCLUÍDOS
           </h3>
           <div className="icons">
-            {armazem.map((item, index) => (
+            {storage.map((item, index) => (
               <ion-icon
                 class={item.color}
                 name={item.name}
@@ -23,10 +35,10 @@ export default function Footer({ card, armazem, setAdd, setIniciar }) {
         </footer>
       )
 
-    case armazem.length === card.length && score === 0:
+    case storage.length === card.length && score >= Number(zapGoal):
       setAdd(true)
       return (
-        <footer className="fim">
+        <footer className="end">
           <div>
             <img
               src="./images/party.png"
@@ -36,12 +48,12 @@ export default function Footer({ card, armazem, setAdd, setIniciar }) {
             <h4>Parabéns</h4>
           </div>
           <p>Você não esqueceu de nenhum flashcard!</p>
-          <div className="alinhar">
+          <div className="align">
             <h3>
-              {armazem.length}/{card.length} CONCLUÍDOS
+              {storage.length}/{card.length} CONCLUÍDOS
             </h3>
             <div className="icons">
-              {armazem.map((item, index) => (
+              {storage.map((item, index) => (
                 <ion-icon
                   class={item.color}
                   name={item.name}
@@ -50,16 +62,16 @@ export default function Footer({ card, armazem, setAdd, setIniciar }) {
               ))}
             </div>
           </div>
-          <div className="reiniciar" onClick={() => setIniciar(false)}>
+          <div className="restart" onClick={restart}>
             REINICIAR RECALL
           </div>
         </footer>
       )
 
-    case armazem.length === card.length && score > 0:
+    case storage.length === card.length && score < Number(zapGoal):
       setAdd(true)
       return (
-        <footer className="fim">
+        <footer className="end">
           <div>
             <img
               src="./images/sad.png"
@@ -69,12 +81,12 @@ export default function Footer({ card, armazem, setAdd, setIniciar }) {
             <h4>Putz...</h4>
           </div>
           <p>Ainda faltam alguns... Mas não desanime!</p>
-          <div className="alinhar">
+          <div className="align">
             <h3>
-              {armazem.length}/{card.length} CONCLUÍDOS
+              {storage.length}/{card.length} CONCLUÍDOS
             </h3>
             <div className="icons">
-              {armazem.map((item, index) => (
+              {storage.map((item, index) => (
                 <ion-icon
                   class={item.color}
                   name={item.name}
@@ -83,7 +95,7 @@ export default function Footer({ card, armazem, setAdd, setIniciar }) {
               ))}
             </div>
           </div>
-          <div className="reiniciar" onClick={() => setIniciar(false)}>
+          <div className="restart" onClick={restart}>
             REINICIAR RECALL
           </div>
         </footer>

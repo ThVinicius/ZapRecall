@@ -2,7 +2,7 @@
 *{
   box-sizing: border-box;
 }
-.botaoIniciar, .pergunta ion-icon, .face img, .opcoes div, .reiniciar{
+.startButton, .question ion-icon, .face img, .options div, .restart{
   cursor: pointer;
 }
 .app{
@@ -10,7 +10,7 @@
   /* height: 100vh; */
   background-color: #FB6B6B;
 }
-.telaInicial{
+.homeScreen{
   width: 100%;
   height: 100vh;
   display: flex;
@@ -19,14 +19,65 @@
   align-items: center;
   gap: 15px;
 }
-.telaInicial img{
-  height: 35.12vh;
+.logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+  margin-bottom: 5vh;
+}
+.homeScreen img{
+  height: 29vh;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9vh;
+}
+h6{
+  font-size: 2.8vh;
+    color: blue;
 }
 h1{
   font: normal 400 36px 'Righteous', cursive;
   color: #FFFFFF;
 }
-.botaoIniciar{
+.zapGoal, select{
+  background-color: #FFFFFF;
+  width: 35.44vw;
+  height: 6.44vh;
+  border: initial;
+  border-radius: 5px;
+  box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
+  font: normal 400 3.3vh 'Recursive', sans-serif;
+  padding: 0 1.5vw;
+}
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background:#FFFFFF url("./images/vector.png") 97% 50% no-repeat;
+  background-size: contain;
+}
+.zapGoal::-webkit-input-placeholder{
+  color: #ADADAD;
+  font-size: 3.3vh;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Roboto';
+  text-align: center;
+}
+.zapGoal::-moz-placeholder{
+  color: #ADADAD;
+  font-size: 3.3vh;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Roboto';
+  text-align: center;
+}
+.startButton{
   background-color: #FFFFFF;
   width: 35.44vw;
   height: 8.09vh;
@@ -40,6 +91,11 @@ h1{
   border: 1px solid #D70900;
   box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
 }
+.startButton.disabled{
+  background-color: #E8E8E8;
+  color: #c0c0c0;
+}
+
 header{
   width: 32.77vw;
   display: flex;
@@ -53,17 +109,17 @@ header img{
   width: 5.435vw;
   height: 9.25vh;
 }
-.tela2{
+.contents{
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 89.5vh;
   overflow-y: scroll;
 }
-.tela2.resultadoFinal{
+.contents.finalResult{
   height: 71vh;
 }
-.pergunta{
+.question{
   background-color: #FFFFFF;
   width: 35.44vw;
   height: 9.74vh;
@@ -76,7 +132,7 @@ header img{
   border-radius: 5px;
   box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
 }
-.pergunta ion-icon{
+.question ion-icon{
   font-size: 5.5vh;
 }
 .card{
@@ -87,7 +143,7 @@ header img{
   border-radius: 5px;
   box-shadow: 1px 3px rgba(0, 0, 0, 0.15);
 }
-.texto{
+.text{
   font: normal 400 2.7vh 'Recursive', sans-serif;
   margin-top: 2.70vh;
 }
@@ -112,12 +168,12 @@ header img{
 .backFace {
   transform: rotateY(180deg);
 }
-.virar{
+.turn{
   transform: rotateY(180deg);
   transition: all .5s;
   transform-style: preserve-3d;
 }
-.opcoes{
+.options{
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -127,7 +183,7 @@ header img{
   padding: 0 4vw;
   margin-bottom: 0.9vh;
 }
-.opcoes > div{
+.options > div{
   width: 8.712vw;
   height: 7.57vh;
   display: flex;
@@ -139,19 +195,19 @@ header img{
   font: normal 400 12px 'Recursive', sans-serif;
   color: #FFFFFF;
 }
-.opcoes div:nth-child(1){
+.options div:nth-child(1){
   background-color: #FF3030;
 }
-.opcoes div:nth-child(2){
+.options div:nth-child(2){
   background-color: #FF922E;
 }
-.opcoes div:nth-child(3){
+.options div:nth-child(3){
   background-color: #2FBE34;
 }
-.riscado{
+.scratched{
   text-decoration: line-through;
 }
-.conteudo{
+.cards{
   display: flex;
   flex-direction: column;
   gap: 3.74vh;
@@ -170,16 +226,16 @@ footer{
 footer ion-icon{
   font-size: 5vh;
 }
-.fim{
+.end{
   height: 29vh;
   gap:1vh;
   padding: 0 13vw;
 }
-.fim div:nth-child(1){
+.end div:nth-child(1){
   display: flex;
   gap: 15px;
 }
-.alinhar{
+.align{
   text-align: center;
 }
 h4{
@@ -203,7 +259,7 @@ h3{
   font: normal 400 2.5vh 'Recursive', sans-serif;
   color: #333333;
 }
-.reiniciar{
+.restart{
   width: 44.53vw;
   height: 4.8vh;
   background-color: #FB6B6B;
@@ -215,21 +271,31 @@ h3{
 }
 @media (max-width: 768px){
 
-  .botaoIniciar{
+  .startButton{
     width: 65.6vw;
   }
-  .telaInicial img{
+  .zapGoal, select{
+    width: 65.6vw;
+    font: normal 400 2.5vh 'Recursive', sans-serif;
+  }
+  .zapGoal::-webkit-input-placeholder{
+    font-size: 2.7vh;
+  }
+  .zapGoal::-moz-placeholder{
+    font-size: 2.7vh;
+  }
+  .homeScreen img{
     width: 36.26vw;
     height: 24.13vh;
   }
-  .pergunta, .card{
+  .question, .card{
     width: 80vw;
   }
   .face img {
     width: 8vw;
     height: 3vh;
   }
-  .opcoes > div{
+  .options > div{
     width: 22.712vw;
     height: 5.57vh;
     padding: 0 2.5vw;
@@ -237,10 +303,10 @@ h3{
   header{
     width: 68.16vw;
   }
-  .tela2.resultadoFinal{
+  .contents.finalResult{
     height: 68vh;
   }
-  .fim{
+  .end{
     height: 32vh;
   }
   header img {
