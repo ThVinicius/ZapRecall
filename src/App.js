@@ -6,7 +6,11 @@ export default function App() {
   const [iniciar, setIniciar] = React.useState(false)
   return (
     <div className="app">
-      {iniciar ? <Contents /> : <Initial setIniciar={setIniciar} />}
+      {iniciar ? (
+        <Contents setIniciar={setIniciar} />
+      ) : (
+        <Initial setIniciar={setIniciar} />
+      )}
     </div>
   )
 }

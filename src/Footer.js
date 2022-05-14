@@ -1,4 +1,4 @@
-export default function Footer({ card, armazem, setAdd }) {
+export default function Footer({ card, armazem, setAdd, setIniciar }) {
   let score = 0
   armazem.forEach(function (item) {
     if (item.score === 'disapproved') score++
@@ -50,6 +50,9 @@ export default function Footer({ card, armazem, setAdd }) {
               ))}
             </div>
           </div>
+          <div className="reiniciar" onClick={() => setIniciar(false)}>
+            REINICIAR RECALL
+          </div>
         </footer>
       )
 
@@ -79,6 +82,9 @@ export default function Footer({ card, armazem, setAdd }) {
                 ></ion-icon>
               ))}
             </div>
+          </div>
+          <div className="reiniciar" onClick={() => setIniciar(false)}>
+            REINICIAR RECALL
           </div>
         </footer>
       )

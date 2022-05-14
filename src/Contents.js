@@ -2,7 +2,7 @@ import react from 'react'
 import Footer from './Footer'
 import Card from './Card'
 
-export default function Contents() {
+export default function Contents({ setIniciar }) {
   const [armazem, setArmazem] = react.useState([])
   const [add, setAdd] = react.useState(false)
 
@@ -48,7 +48,6 @@ export default function Contents() {
           <img
             src="./images/logo-pequeno.png"
             alt="logo em formato de um relampago"
-            style={{ width: '13.86vw', height: '8.99vh' }}
           />
           <h1>ZapRecall</h1>
         </header>
@@ -65,7 +64,12 @@ export default function Contents() {
           ))}
         </div>
       </div>
-      <Footer card={card} armazem={armazem} setAdd={setAdd} />
+      <Footer
+        card={card}
+        armazem={armazem}
+        setAdd={setAdd}
+        setIniciar={setIniciar}
+      />
     </>
   )
 }

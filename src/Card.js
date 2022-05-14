@@ -45,7 +45,6 @@ export default function Card({ num, pergunta, resposta, setArmazem, armazem }) {
         <img
           src="./images/setinha.png"
           alt="setinha"
-          style={{ width: '8vw', height: '3vh' }}
           onClick={() => setValor(true)}
         />
       </div>
