@@ -37,6 +37,7 @@ export default function MainScreen({
         card={card}
         storage={storage}
         setAdd={setAdd}
+        add={add}
         setStart={setStart}
         zapGoal={zapGoal}
         setDeck={setDeck}

@@ -20,7 +20,7 @@ export default function Card({ num, question, answer, setStorage, storage }) {
     default:
       color = ''
   }
-  //spread
+
   function answered(string, color, type) {
     setReply(false)
     setIcon(string)
