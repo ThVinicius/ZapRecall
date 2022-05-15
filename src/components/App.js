@@ -126,7 +126,6 @@ export default function App() {
   const [deck, setDeck] = React.useState('defauld')
 
   if (deck !== 'defauld') {
-    console.log(cards[Number(deck)].deck)
     shuffleArray(cards[Number(deck)].deck)
   }
 

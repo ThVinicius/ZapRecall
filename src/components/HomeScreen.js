@@ -13,6 +13,12 @@ export default function HomeScreen({
     let input = e.target.value
     if (input <= cards[deck].deck.length) setZapGoal(e.target.value)
   }
+
+  const hanleChangeDeck = text => {
+    setDeck(text.target.value)
+    setZapGoal('')
+  }
+
   return (
     <div className="homeScreen">
       <div className="logo">
@@ -20,11 +26,7 @@ export default function HomeScreen({
         <h1>ZapRecall</h1>
       </div>
 
-      <select
-        required
-        value={deck}
-        onChange={text => setDeck(text.target.value)}
-      >
+      <select required value={deck} onChange={text => hanleChangeDeck(text)}>
         <option value="defauld" disabled>
           Escolha seu deck
         </option>
