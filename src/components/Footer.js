@@ -1,3 +1,6 @@
+import sad from '../assets/images/sad.png'
+import party from '../assets/images/party.png'
+
 export default function Footer({
   card,
   storage,
@@ -41,7 +44,7 @@ export default function Footer({
         <footer className="end">
           <div>
             <img
-              src="./images/party.png"
+              src={party}
               alt="emoji de festa"
               style={{ height: '3.44vh' }}
             />
@@ -73,11 +76,7 @@ export default function Footer({
       return (
         <footer className="end">
           <div>
-            <img
-              src="./images/sad.png"
-              alt="emoji triste"
-              style={{ height: '3.44vh' }}
-            />
+            <img src={sad} alt="emoji triste" style={{ height: '3.44vh' }} />
             <h4>Putz...</h4>
           </div>
           <p>Ainda faltam alguns... Mas não desanime!</p>

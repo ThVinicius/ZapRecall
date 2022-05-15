@@ -58,7 +58,7 @@ select{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background:#FFFFFF url("./images/vector.png") 97% 50% no-repeat;
+  background:#FFFFFF url("../../assets/images/vector.png") 97% 50% no-repeat;
   background-size: contain;
 }
 .zapGoal::-webkit-input-placeholder{

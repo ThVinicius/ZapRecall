@@ -1,5 +1,5 @@
 import reactDom from 'react-dom'
-import App from './App'
+import App from './components/App'
 
 function Renderizar() {
   return <App />

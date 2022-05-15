@@ -1,4 +1,5 @@
 import react from 'react'
+import setinha from '../assets/images/setinha.png'
 
 export default function Card({ num, question, answer, setStorage, storage }) {
   const [value, setValue] = react.useState(false)
@@ -41,11 +42,7 @@ export default function Card({ num, question, answer, setStorage, storage }) {
     <div className={`card ${value ? 'turn' : ''}`}>
       <div className="face">
         <div className="text">{question}</div>
-        <img
-          src="./images/setinha.png"
-          alt="setinha"
-          onClick={() => setValue(true)}
-        />
+        <img src={setinha} alt="setinha" onClick={() => setValue(true)} />
       </div>
       <div className="backFace face">
         <div className="text">{answer}</div>

@@ -1,4 +1,6 @@
 import React from 'react'
+import logo from '../assets/images/logo.png'
+
 export default function HomeScreen({
   setStart,
   setZapGoal,
@@ -14,7 +16,7 @@ export default function HomeScreen({
   return (
     <div className="homeScreen">
       <div className="logo">
-        <img src="./images/logo.png" alt="logo em formato de um relampago" />
+        <img src={logo} alt="logo em formato de um relampago" />
         <h1>ZapRecall</h1>
       </div>
 

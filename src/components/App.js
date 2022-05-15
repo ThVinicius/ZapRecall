@@ -1,6 +1,8 @@
 import React from 'react'
 import HomeScreen from './HomeScreen'
 import MainScreen from './MainScreen'
+import '../assets/css/reset.css'
+import '../assets/css/style.css'
 
 const cards = [
   {
@@ -47,7 +49,6 @@ export default function App() {
   const [start, setStart] = React.useState(false)
   const [zapGoal, setZapGoal] = React.useState('')
   const [deck, setDeck] = React.useState('defauld')
-  console.log(deck)
 
   return (
     <div className="app">

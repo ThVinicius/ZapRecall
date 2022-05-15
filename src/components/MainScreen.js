@@ -1,6 +1,7 @@
 import react from 'react'
 import Footer from './Footer'
 import Card from './Card'
+import logoPequeno from '../assets/images/logo-pequeno.png'
 
 export default function MainScreen({
   setStart,
@@ -9,7 +10,6 @@ export default function MainScreen({
   setZapGoal,
   setDeck
 }) {
-  console.log(card)
   const [storage, setStorage] = react.useState([])
   const [add, setAdd] = react.useState(false)
 
@@ -17,10 +17,7 @@ export default function MainScreen({
     <>
       <div className={add ? 'contents finalResult' : 'contents'}>
         <header>
-          <img
-            src="./images/logo-pequeno.png"
-            alt="logo em formato de um relampago"
-          />
+          <img src={logoPequeno} alt="logo em formato de um relampago" />
           <h1>ZapRecall</h1>
         </header>
         <div className="cards">
