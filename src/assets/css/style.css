@@ -273,16 +273,18 @@ h3{
 
   .startButton{
     width: 65.6vw;
+    height: 54px;
   }
   .zapGoal, select{
     width: 65.6vw;
-    font: normal 400 2.5vh 'Recursive', sans-serif;
+    height: 54px;
+    font: normal 400 18px 'Recursive', sans-serif;
   }
   .zapGoal::-webkit-input-placeholder{
-    font-size: 2.7vh;
+    font-size: 18px;
   }
   .zapGoal::-moz-placeholder{
-    font-size: 2.7vh;
+    font-size: 18px;
   }
   .homeScreen img{
     width: 36.26vw;
